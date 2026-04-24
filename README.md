@@ -1,16 +1,24 @@
-# React + Vite
+**GastoTrack 💸**
+Projeto 1 da disciplina Programação Web Fullstack (ES47B / ES71) — UTFPR Campus Cornélio Procópio.
+O objetivo foi desenvolver o frontend de uma aplicação web usando React.js + AJAX, seguindo o conceito de SPA (Single Page Application).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Sobre o projeto**
+A aplicação é um controle de gastos pessoais. Você consegue adicionar despesas com descrição, valor, categoria e data, visualizar um resumo dos seus gastos por categoria e ainda converter o total para outras moedas usando uma API externa de câmbio em tempo real.
+Escolhi esse tema porque achei mais interessante do que usar uma API aleatória de coisas sem sentido, e também porque é algo que eu realmente usaria no dia a dia.
 
-Currently, two official plugins are available:
+**📡 API externa utilizada**
+ExchangeRate-API — https://api.exchangerate-api.com/v4/latest/BRL
+Endpoint público e gratuito, sem necessidade de chave. Retorna as taxas de câmbio em relação ao BRL. O Summary.jsx faz a requisição via fetch toda vez que o total muda ou o usuário troca a moeda de destino.
+Caso a requisição falhe (sem internet, por exemplo), a aplicação exibe uma mensagem de erro logo abaixo do seletor de moeda.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Como Rodar o projeto localmente:**
 
-## React Compiler
+# Clone o repositório
+git clone https://github.com/seu-usuario/expense-tracker.git
+cd expense-tracker
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Instale as dependências
+npm install
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Rode em modo desenvolvimento
+npm run dev
